@@ -2,7 +2,7 @@
 
 - [x] Changer player color
 - [x] Add arrow keys support
-- [ ] Add a scoring system
+- [x] Add a scoring system
 - [ ] Implement multiple lives and re-spawning
 - [ ] Add an explosion effect for the asteroids
 - [ ] Add acceleration to the player movement
