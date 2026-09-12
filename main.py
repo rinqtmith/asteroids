@@ -45,7 +45,7 @@ def main():
 
             if asteroid.collides_with(player):
                 log_event("player_hit")
-                if player.lives > 0:
+                if player.lives > 1:
                     player.lives -= 1
                     player.position = pygame.Vector2(
                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2
@@ -72,7 +72,7 @@ def main():
         score_text_pos = score_text.get_rect(centerx=screen.get_width() - 100, y=10)
         screen.blit(score_text, score_text_pos)
 
-        lives_text = font.render(f"Lives: {player.lives}", True, "yellow")
+        lives_text = font.render(f"Lives: {player.lives * ' + '}", True, "yellow")
         lives_text_pos = lives_text.get_rect(x=10, y=10)
         screen.blit(lives_text, lives_text_pos)
 
