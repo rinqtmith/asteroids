@@ -11,3 +11,4 @@ wheels/
 
 # Project specific
 game_state.jsonl
+game_events.jsonl
