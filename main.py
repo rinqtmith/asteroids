@@ -45,8 +45,14 @@ def main():
 
             if asteroid.collides_with(player):
                 log_event("player_hit")
-                print("Game over!")
-                sys.exit()
+                if player.lives > 0:
+                    player.lives -= 1
+                    player.position = pygame.Vector2(
+                        SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2
+                    )
+                else:
+                    print("Game over!")
+                    sys.exit()
 
             for shot in shots:
                 shot: Shot
@@ -62,9 +68,14 @@ def main():
         for drawable_sprite in drawable:
             drawable_sprite.draw(screen)
 
-        text = font.render(f"Score: {score:05d}", True, "yellow")
-        textpos = text.get_rect(centerx=screen.get_width() - 100, y=10)
-        screen.blit(text, textpos)
+        score_text = font.render(f"Score: {score:05d}", True, "yellow")
+        score_text_pos = score_text.get_rect(centerx=screen.get_width() - 100, y=10)
+        screen.blit(score_text, score_text_pos)
+
+        lives_text = font.render(f"Lives: {player.lives}", True, "yellow")
+        lives_text_pos = lives_text.get_rect(x=10, y=10)
+        screen.blit(lives_text, lives_text_pos)
+
         pygame.display.flip()
 
         dt = clock.tick(60) / 1000

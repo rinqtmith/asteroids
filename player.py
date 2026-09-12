@@ -17,6 +17,7 @@ class Player(CircleShape):
         super().__init__(x, y, PLAYER_RADIUS)
         self.rotation = 0.0
         self.cooldown = 0.0
+        self.lives = 3
 
     def rotate(self, dt: float) -> None:
         self.rotation += dt * PLAYER_TURN_SPEED
