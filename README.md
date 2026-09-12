@@ -1,6 +1,6 @@
 # TODO
 
-- [ ] Changer player color
+- [x] Changer player color
 - [ ] Add arrow keys support
 - [ ] Add a scoring system
 - [ ] Implement multiple lives and re-spawning
